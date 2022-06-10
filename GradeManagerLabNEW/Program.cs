@@ -8,7 +8,7 @@ namespace GradeManagerLab
     {
         // Create list to hold grades and names
         static List<double> studentGrades = new List<double>() { };
-        static List<Student> studentList = new List<Student>() { };       
+        static List<Student> studentList = new List<Student>() { };
         static void Main(string[] args)
         {
             bool showMenu = true;
@@ -31,7 +31,7 @@ namespace GradeManagerLab
             Console.WriteLine("7 - Edit Students Grades");
             Console.WriteLine("8 - Exit Program");
             Console.WriteLine("\r\nYour Menu Selection: ");
-            
+
             switch (Console.ReadLine())
             {
                 case "1":
@@ -85,15 +85,15 @@ namespace GradeManagerLab
             return false;
 
         }
-        static void GradeBook()
+            static void GradeBook()
         {
             Console.WriteLine("*---- You Are Viewing Your Student Grade Book ----*");
-            int i = 0;
+            int i = 0;  
             foreach (Student s in studentList)
             {
                 Console.WriteLine($"{i}. Name: {s.Name}, Grade: {s.Grade}");
                 i++;
-
+               
             }
             if (i == 0)
             {
@@ -151,7 +151,8 @@ namespace GradeManagerLab
             if (remove >= 0 && remove < studentList.Count)
             {
                 Console.WriteLine(studentList[remove].Name + " has been deleted from the grade book.");
-                studentList.RemoveAt(remove);              
+                studentList.RemoveAt(remove);
+                
             }
             Console.WriteLine("Press enter to return to the main menu...");
             Console.ReadLine();
@@ -166,6 +167,7 @@ namespace GradeManagerLab
             {
                 Console.WriteLine($"{i}. Name: {s.Name}, Grade: {s.Grade}");
                 i++;
+
             }
             int userInput = Convert.ToInt32 (Console.ReadLine());   
             if (userInput >= 0 && userInput < studentList.Count)
@@ -182,12 +184,14 @@ namespace GradeManagerLab
         static void ExitProgram()
         {
             Environment.Exit(-1);
-        }
+
+        }     
         class Student
         {
-            public string Name { get; set; }
-            public double Grade { get; set; }
-        }             
+            public string Name { get; set; }    
+            public double Grade { get; set; }   
+
+        }
 
     }
 
